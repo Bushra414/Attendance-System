@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Models\employee; 
-use App\Models\position;
+use App\Models\Position;
 use App\Models\status; 
 use Illuminate\Http\Request;
 
