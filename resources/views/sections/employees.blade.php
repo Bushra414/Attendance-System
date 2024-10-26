@@ -27,7 +27,7 @@ Employees
             <tr>
                 <td>{{ $employee->first_name . ' ' . $employee->last_name }}</td>
                 <td>{{ $positions->where('id', $employee->positions_id)->pluck('title')->first() }}</td>
-                <td>{{ $employee->department }}</td>
+                <td>{{ $positions->where('id', $employee->positions_id)->pluck('department')->first() }}</td>
                 <td>{{ $employee->email }}</td>
                 <td>{{ $positions->where('id', $employee->positions_id)->pluck('salary')->first() }}
                 </td>

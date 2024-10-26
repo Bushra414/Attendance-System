@@ -5,12 +5,13 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class positionSeeder extends Seeder
+class positionsSeeder extends Seeder
 {
     public function run()
     {
         DB::table('positions')->insert([
             [
+                'id' => 1,
                 'title' => 'Physician/Doctor',
                 'description' => 'A licensed medical professional responsible for diagnosing and treating patients.',
                 'salary' => 120000.00,
@@ -19,6 +20,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 2,
                 'title' => 'Resident/Intern',
                 'description' => 'Medical graduates in training under supervision to become licensed physicians.',
                 'salary' => 60000.00,
@@ -27,6 +29,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 3,
                 'title' => 'Registered Nurse',
                 'description' => 'A licensed nurse who provides patient care, administers medication, and supports doctors.',
                 'salary' => 75000.00,
@@ -35,6 +38,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 4,
                 'title' => 'Nurse Practitioner',
                 'description' => 'A registered nurse with advanced training who can diagnose and treat illnesses.',
                 'salary' => 95000.00,
@@ -43,6 +47,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 5,
                 'title' => 'Licensed Practical Nurse',
                 'description' => 'A nurse who provides basic medical care and assists registered nurses.',
                 'salary' => 50000.00,
@@ -51,6 +56,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 6,
                 'title' => 'Physician Assistant',
                 'description' => 'A licensed professional who works under a physician to provide care to patients.',
                 'salary' => 90000.00,
@@ -59,6 +65,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 7,
                 'title' => 'Pharmacist',
                 'description' => 'A healthcare professional who prepares and dispenses medications to patients.',
                 'salary' => 95000.00,
@@ -67,6 +74,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 8,
                 'title' => 'Clinical Nurse Educator',
                 'description' => 'A nurse responsible for teaching and training nursing staff.',
                 'salary' => 80000.00,
@@ -75,6 +83,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 9,
                 'title' => 'Occupational Therapist',
                 'description' => 'A healthcare professional who helps patients improve their ability to perform daily activities.',
                 'salary' => 70000.00,
@@ -83,6 +92,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 10,
                 'title' => 'Physical Therapist',
                 'description' => 'A healthcare professional who helps patients improve their movement and manage pain.',
                 'salary' => 75000.00,
@@ -91,6 +101,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 11,
                 'title' => 'Speech-Language Pathologist',
                 'description' => 'A professional who assesses and treats speech, language, and communication disorders.',
                 'salary' => 70000.00,
@@ -99,6 +110,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 12,
                 'title' => 'Respiratory Therapist',
                 'description' => 'A healthcare professional who provides care for patients with breathing difficulties.',
                 'salary' => 65000.00,
@@ -107,6 +119,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 13,
                 'title' => 'Dietitian/Nutritionist',
                 'description' => 'A professional who advises on proper eating habits for health and wellness.',
                 'salary' => 60000.00,
@@ -115,6 +128,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 14,
                 'title' => 'Mental Health Counselor',
                 'description' => 'A professional who provides therapy to patients dealing with mental health issues.',
                 'salary' => 70000.00,
@@ -123,6 +137,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 15,
                 'title' => 'Social Worker',
                 'description' => 'A professional who helps patients cope with social, emotional, and financial challenges.',
                 'salary' => 60000.00,
@@ -131,6 +146,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 16,
                 'title' => 'Laboratory Technician',
                 'description' => 'A professional who conducts tests and analyzes samples for medical diagnosis.',
                 'salary' => 60000.00,
@@ -139,6 +155,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 17,
                 'title' => 'Hospital Administrator',
                 'description' => 'Oversees hospital operations, budget, and staff.',
                 'salary' => 110000.00,
@@ -147,6 +164,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 18,
                 'title' => 'Human Resources Manager',
                 'description' => 'Responsible for managing employee relations, recruitment, and training.',
                 'salary' => 80000.00,
@@ -155,6 +173,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 19,
                 'title' => 'Billing Specialist',
                 'description' => 'Manages patient billing and insurance claims.',
                 'salary' => 50000.00,
@@ -163,6 +182,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 20,
                 'title' => 'Medical Records Clerk',
                 'description' => 'Responsible for organizing and maintaining patient health records.',
                 'salary' => 40000.00,
@@ -171,6 +191,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 21,
                 'title' => 'Admissions Clerk',
                 'description' => 'Processes patient admissions and maintains records.',
                 'salary' => 35000.00,
@@ -179,6 +200,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 22,
                 'title' => 'Receptionist',
                 'description' => 'Greets visitors and manages front desk operations.',
                 'salary' => 35000.00,
@@ -187,6 +209,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 23,
                 'title' => 'Ward Clerk/Unit Secretary',
                 'description' => 'Provides administrative support in patient care units.',
                 'salary' => 40000.00,
@@ -195,6 +218,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 24,
                 'title' => 'Medical Transcriptionist',
                 'description' => 'Transcribes medical reports and documents from audio recordings.',
                 'salary' => 45000.00,
@@ -203,6 +227,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 25,
                 'title' => 'Patient Coordinator',
                 'description' => 'Assists patients in navigating healthcare services and appointments.',
                 'salary' => 50000.00,
@@ -211,6 +236,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 26,
                 'title' => 'Compliance Officer',
                 'description' => 'Ensures the hospital adheres to regulations and standards.',
                 'salary' => 70000.00,
@@ -219,6 +245,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 27,
                 'title' => 'Data Analyst',
                 'description' => 'Analyzes healthcare data to improve operations and patient outcomes.',
                 'salary' => 75000.00,
@@ -227,6 +254,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 28,
                 'title' => 'IT Support Specialist',
                 'description' => 'Provides technical support and maintains hospital IT systems.',
                 'salary' => 60000.00,
@@ -235,6 +263,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 29,
                 'title' => 'Radiology Technician',
                 'description' => 'Operates imaging equipment to help diagnose patient conditions.',
                 'salary' => 65000.00,
@@ -243,6 +272,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 30,
                 'title' => 'Phlebotomist',
                 'description' => 'Draws blood for tests, transfusions, research, or blood donations.',
                 'salary' => 40000.00,
@@ -251,6 +281,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 31,
                 'title' => 'Certified Nursing Assistant (CNA)',
                 'description' => 'Assists nurses and provides basic patient care.',
                 'salary' => 35000.00,
@@ -259,6 +290,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 32,
                 'title' => 'Emergency Medical Technician (EMT)',
                 'description' => 'Provides emergency medical care and transportation.',
                 'salary' => 45000.00,
@@ -267,6 +299,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 33,
                 'title' => 'Paramedic',
                 'description' => 'Provides advanced emergency medical care and transportation.',
                 'salary' => 55000.00,
@@ -275,6 +308,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 34,
                 'title' => 'Surgical Technologist',
                 'description' => 'Assists in surgical operations by preparing and maintaining the operating room.',
                 'salary' => 50000.00,
@@ -283,6 +317,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 35,
                 'title' => 'Orderly',
                 'description' => 'Assists in the transport of patients and ensures patient safety.',
                 'salary' => 30000.00,
@@ -291,6 +326,7 @@ class positionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 36,
                 'title' => 'Patient Transporter',
                 'description' => 'Transports patients to various departments within the hospital.',
                 'salary' => 32000.00,
