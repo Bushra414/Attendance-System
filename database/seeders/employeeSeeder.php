@@ -12,7 +12,6 @@ class employeeSeeder extends Seeder
      */
     public function run(): void
     {
-        
         $employees = [
             [
                 'id' => 1,
@@ -22,8 +21,8 @@ class employeeSeeder extends Seeder
                 'fingerprint_data' => NULL,
                 'positions_id' => 1,
                 'department' => 'Cardiology',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 1, // Added shift assignment id
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
@@ -35,8 +34,8 @@ class employeeSeeder extends Seeder
                 'fingerprint_data' => NULL,
                 'positions_id' => 2,
                 'department' => 'Pediatrics',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 1, // Added shift assignment id
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
@@ -47,9 +46,9 @@ class employeeSeeder extends Seeder
                 'email' => 'michael.johnson@example.com',
                 'fingerprint_data' => NULL,
                 'positions_id' => 3,
-                'department' => 'Orthopedics',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'department' => 'Surgery',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
@@ -59,613 +58,630 @@ class employeeSeeder extends Seeder
                 'last_name' => 'Davis',
                 'email' => 'emily.davis@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 4,
-                'department' => 'Anesthesiology',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 1,
+                'department' => 'Cardiology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 5,
                 'first_name' => 'William',
-                'last_name' => 'Taylor',
-                'email' => 'william.taylor@example.com',
+                'last_name' => 'Miller',
+                'email' => 'william.miller@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 5,
-                'department' => 'Radiology',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 2,
+                'department' => 'Emergency',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 6,
-                'first_name' => 'David',
-                'last_name' => 'Brown',
-                'email' => 'david.brown@example.com',
+                'first_name' => 'Sarah',
+                'last_name' => 'Taylor',
+                'email' => 'sarah.taylor@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 6,
-                'department' => 'Pharmacy',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 3,
+                'department' => 'Neurology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 7,
-                'first_name' => 'Patricia',
-                'last_name' => 'Miller',
-                'email' => 'patricia.miller@example.com',
+                'first_name' => 'Olivia',
+                'last_name' => 'Hernandez',
+                'email' => 'olivia.hernandez@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 7,
-                'department' => 'Laboratory',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 1,
+                'department' => 'Oncology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 8,
-                'first_name' => 'Richard',
-                'last_name' => 'Wilson',
-                'email' => 'richard.wilson@example.com',
+                'first_name' => 'Benjamin',
+                'last_name' => 'Martin',
+                'email' => 'benjamin.martin@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 8,
-                'department' => 'Physical Therapy',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 2,
+                'department' => 'Orthopedics',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 9,
-                'first_name' => 'Linda',
-                'last_name' => 'Moore',
-                'email' => 'linda.moore@example.com',
+                'first_name' => 'Ava',
+                'last_name' => 'Thompson',
+                'email' => 'ava.thompson@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 9,
-                'department' => 'Occupational Therapy',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 3,
+                'department' => 'Gastroenterology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 10,
-                'first_name' => 'Kenneth',
-                'last_name' => 'Taylor',
-                'email' => 'kenneth.taylor@example.com',
+                'first_name' => 'Isabella',
+                'last_name' => 'White',
+                'email' => 'isabella.white@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 10,
-                'department' => 'Dietetics',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 1,
+                'department' => 'Dermatology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 11,
-                'first_name' => 'Mary',
-                'last_name' => 'Anderson',
-                'email' => 'mary.anderson@example.com',
+                'first_name' => 'Ethan',
+                'last_name' => 'Hall',
+                'email' => 'ethan.hall@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 11,
-                'department' => 'Social Work',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 2,
+                'department' => 'Urology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 12,
-                'first_name' => 'Thomas',
-                'last_name' => 'White',
-                'email' => 'thomas.white@example.com',
+                'first_name' => 'Liam',
+                'last_name' => 'Lee',
+                'email' => 'liam.lee@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 12,
-                'department' => 'Psychology',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 3,
+                'department' => 'Nephrology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 13,
-                'first_name' => 'Barbara',
-                'last_name' => 'Harris',
-                'email' => 'barbara.harris@example.com',
+                'first_name' => 'Noah',
+                'last_name' => 'Kim',
+                'email' => 'noah.kim@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 13,
-                'department' => 'Chaplaincy',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 1,
+                'department' => 'Endocrinology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 14,
-                'first_name' => 'Daniel',
-                'last_name' => 'Martin',
-                'email' => 'daniel.martin@example.com',
+                'first_name' => 'Elijah',
+                'last_name' => 'Patel',
+                'email' => 'elijah.patel@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 14,
-                'department' => 'Medical Assisting',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 2,
+                'department' => 'Rheumatology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 15,
-                'first_name' => 'Elizabeth',
-                'last_name' => 'Thompson',
-                'email' => 'elizabeth.thompson@example.com',
+                'first_name' => 'James',
+                'last_name' => 'Brooks',
+                'email' => 'james.brooks@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 15,
-                'department' => 'Medical Technology',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 3,
+                'department' => 'Pulmonology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 16,
-                'first_name' => 'Charles',
-                'last_name' => 'Garcia',
-                'email' => 'charles.garcia@example.com',
+                'first_name' => 'Gabriel',
+                'last_name' => 'Ross',
+                'email' => 'gabriel.ross@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 16,
-                'department' => 'Radiation Therapy',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 1,
+                'department' => 'Infectious Diseases',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 17,
-                'first_name' => 'Betty',
-                'last_name' => 'Martinez',
-                'email' => 'betty.martinez@example.com',
+                'first_name' => 'Alexander',
+                'last_name' => 'Walker',
+                'email' => 'alexander.walker@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 17,
-                'department' => 'Respiratory Therapy',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 2,
+                'department' => 'Hematology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 18,
-                'first_name' => 'George',
-                'last_name' => 'Robinson',
-                'email' => 'george.robinson@example.com',
+                'first_name' => 'Julian',
+                'last_name' => 'Jackson',
+                'email' => 'julian.jackson@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 18,
-                'department' => 'Surgical Technology',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 3,
+                'department' => 'Gynecology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 19,
-                'first_name' => 'Ruth',
-                'last_name' => 'Clark',
-                'email' => 'ruth.clark@example.com',
+                'first_name' => 'Logan',
+                'last_name' => 'Lewis',
+                'email' => 'logan.lewis@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 19,
-                'department' => 'Phlebotomy',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 1,
+                'department' => 'Ophthalmology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 20,
-                'first_name' => 'Andrew',
-                'last_name' => 'Rodriguez',
-                'email' => 'andrew.rodriguez@example.com',
+                'first_name' => 'Caleb',
+                'last_name' => 'Martin',
+                'email' => 'caleb.martin@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 20,
-                'department' => 'Emergency Medical Services',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
+                'positions_id' => 2,
+                'department' => 'Otolaryngology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
                 'created_at' => '2024-08-27 09:44:00',
                 'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 21,
-                'first_name' => 'Jessica',
-                'last_name' => 'Smith',
-                'email' => 'jessica.smith@example.com',
+                'first_name' => 'Jaxon',
+                'last_name' => 'Hall',
+                'email' => 'jaxon.hall@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 2,
-                'department' => 'Pediatrics',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-08-28 10:15:00',
-                'updated_at' => '2024-08-28 10:15:00'
+                'positions_id' => 3,
+                'department' => 'Dermatology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 22,
-                'first_name' => 'Michael',
-                'last_name' => 'Johnson',
-                'email' => 'michael.johnson.1@example.com',
+                'first_name' => 'Hunter',
+                'last_name' => 'Brooks',
+                'email' => 'hunter.brooks@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 10,
-                'department' => 'Emergency Medical Services',
-                'status_id' => 2, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-08-29 11:00:00',
-                'updated_at' => '2024-08-29 11:00:00'
+                'positions_id' => 1,
+                'department' => 'Psychiatry',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 23,
-                'first_name' => 'Samantha',
+                'first_name' => 'Parker',
                 'last_name' => 'Lee',
-                'email' => 'samantha.lee@example.com',
+                'email' => 'parker.lee@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 3,
-                'department' => 'Surgery',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-08-30 08:30:00',
-                'updated_at' => '2024-08-30 08:30:00'
+                'positions_id' => 2,
+                'department' => 'Neurosurgery',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 24,
-                'first_name' => 'Daniel',
-                'last_name' => 'Martinez',
-                'email' => 'daniel.martinez@example.com',
+                'first_name' => 'Cooper',
+                'last_name' => 'Walker',
+                'email' => 'cooper.walker@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 5,
-                'department' => 'Radiology',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-08-30 09:00:00',
-                'updated_at' => '2024-08-30 09:00:00'
+                'positions_id' => 3,
+                'department' => 'Plastic Surgery',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 25,
-                'first_name' => 'Emily',
-                'last_name' => 'Davis',
-                'email' => 'emily.davis.1@example.com',
+                'first_name' => 'Cameron',
+                'last_name' => 'Jackson',
+                'email' => 'cameron.jackson@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 4,
-                'department' => 'Anesthesiology',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-08-30 10:00:00',
-                'updated_at' => '2024-08-30 10:00:00'
+                'positions_id' => 1,
+                'department' => 'Vascular Surgery',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 26,
-                'first_name' => 'Benjamin',
-                'last_name' => 'Lopez',
-                'email' => 'benjamin.lopez@example.com',
+                'first_name' => 'Eli',
+                'last_name' => 'Lewis',
+                'email' => 'eli.lewis@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 7,
-                'department' => 'Laboratory',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-08-31 08:10:00',
-                'updated_at' => '2024-08-31 08:10:00'
+                'positions_id' => 2,
+                'department' => 'Thoracic Surgery',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 27,
-                'first_name' => 'Sophia',
-                'last_name' => 'Garcia',
-                'email' => 'sophia.garcia@example.com',
+                'first_name' => 'Landon',
+                'last_name' => 'Martin',
+                'email' => 'landon.martin@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 6,
-                'department' => 'Pharmacy',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-08-31 09:30:00',
-                'updated_at' => '2024-08-31 09:30:00'
+                'positions_id' => 3,
+                'department' => 'General Surgery',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 28,
-                'first_name' => 'Jacob',
-                'last_name' => 'Wilson',
-                'email' => 'jacob.wilson@example.com',
+                'first_name' => 'Joshua',
+                'last_name' => 'Hall',
+                'email' => 'joshua.hall@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 3,
-                'department' => 'Orthopedics',
-                'status_id' => 2, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-01 07:45:00',
-                'updated_at' => '2024-09-01 07:45:00'
+                'positions_id' => 1,
+                'department' => 'Colorectal Surgery',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 29,
-                'first_name' => 'Emma',
-                'last_name' => 'Clark',
-                'email' => 'emma.clark@example.com',
+                'first_name' => 'Alexander',
+                'last_name' => 'Brown',
+                'email' => 'alexander.brown@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 12,
-                'department' => 'Psychiatry',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-01 10:15:00',
-                'updated_at' => '2024-09-01 10:15:00'
+                'positions_id' => 1,
+                'department' => 'Neurology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 30,
-                'first_name' => 'Aiden',
-                'last_name' => 'Moore',
-                'email' => 'aiden.moore@example.com',
+                'first_name' => 'Gabriel',
+                'last_name' => 'Davis',
+                'email' => 'gabriel.davis@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 10,
-                'department' => 'Dietary Services',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-02 08:00:00',
-                'updated_at' => '2024-09-02 08:00:00'
+                'positions_id' => 2,
+                'department' => 'Ophthalmology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 31,
-                'first_name' => 'Chloe',
-                'last_name' => 'Kim',
-                'email' => 'chloe.kim@example.com',
+                'first_name' => 'Julian',
+                'last_name' => 'Miller',
+                'email' => 'julian.miller@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 1,
-                'department' => 'Cardiology',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-03 09:20:00',
-                'updated_at' => '2024-09-03 09:20:00'
+                'positions_id' => 3,
+                'department' => 'Otolaryngology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 32,
-                'first_name' => 'Liam',
-                'last_name' => 'Brown',
-                'email' => 'liam.brown@example.com',
+                'first_name' => 'Mason',
+                'last_name' => 'Wilson',
+                'email' => 'mason.wilson@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 2,
-                'department' => 'Pediatrics',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-04 08:50:00',
-                'updated_at' => '2024-09-04 08:50:00'
+                'positions_id' => 1,
+                'department' => 'Pathology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 33,
-                'first_name' => 'Olivia',
-                'last_name' => 'Nguyen',
-                'email' => 'olivia.nguyen@example.com',
+                'first_name' => 'Logan',
+                'last_name' => 'Moore',
+                'email' => 'logan.moore@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 8,
-                'department' => 'Rehabilitation Services',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-05 10:10:00',
-                'updated_at' => '2024-09-05 10:10:00'
+                'positions_id' => 2,
+                'department' => 'Psychiatry',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 34,
-                'first_name' => 'Noah',
-                'last_name' => 'Evans',
-                'email' => 'noah.evans@example.com',
+                'first_name' => 'Ethan',
+                'last_name' => 'Taylor',
+                'email' => 'ethan.taylor@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 21,
-                'department' => 'Dermatology',
-                'status_id' => 2, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-06 11:25:00',
-                'updated_at' => '2024-09-06 11:25:00'
+                'positions_id' => 3,
+                'department' => 'Pulmonology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 35,
-                'first_name' => 'Sophia',
-                'last_name' => 'White',
-                'email' => 'sophia.white@example.com',
+                'first_name' => 'Lucas',
+                'last_name' => 'Anderson',
+                'email' => 'lucas.anderson@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 5,
+                'positions_id' => 1,
                 'department' => 'Radiology',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-07 09:40:00',
-                'updated_at' => '2024-09-07 09:40:00'
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 36,
-                'first_name' => 'Mason',
-                'last_name' => 'Allen',
-                'email' => 'mason.allen@example.com',
+                'first_name' => 'Oliver',
+                'last_name' => 'Thomas',
+                'email' => 'oliver.thomas@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 22,
-                'department' => 'Oncology',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-08 08:30:00',
-                'updated_at' => '2024-09-08 08:30:00'
+                'positions_id' => 2,
+                'department' => 'Urology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 37,
-                'first_name' => 'Isabella',
-                'last_name' => 'Harris',
-                'email' => 'isabella.harris@example.com',
+                'first_name' => 'Benjamin',
+                'last_name' => 'Jackson',
+                'email' => 'benjamin.jackson@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 1,
-                'department' => 'General Medicine',
-                'status_id' => 2, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-09 10:00:00',
-                'updated_at' => '2024-09-09 10:00:00'
+                'positions_id' => 3,
+                'department' => 'Vascular Surgery',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 38,
-                'first_name' => 'Lucas',
-                'last_name' => 'Walker',
-                'email' => 'lucas.walker@example.com',
+                'first_name' => 'Caleb',
+                'last_name' => 'Lewis',
+                'email' => 'caleb.lewis@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 23,
-                'department' => 'Otolaryngology',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-10 11:15:00',
-                'updated_at' => '2024-09-10 11:15:00'
+                'positions_id' => 1,
+                'department' => 'Thoracic Surgery',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 39,
-                'first_name' => 'Mia',
-                'last_name' => 'Young',
-                'email' => 'mia.young@example.com',
+                'first_name' => 'Jaxon',
+                'last_name' => 'Martin',
+                'email' => 'jaxon.martin@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 12,
-                'department' => 'Psychiatry',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-11 09:00:00',
-                'updated_at' => '2024-09-11 09:00:00'
+                'positions_id' => 2,
+                'department' => 'General Surgery',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 40,
-                'first_name' => 'Elijah',
-                'last_name' => 'Scott',
-                'email' => 'elijah.scott@example.com',
+                'first_name' => 'Hunter',
+                'last_name' => 'Hall',
+                'email' => 'hunter.hall@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 24,
-                'department' => 'Neonatology',
-                'status_id' => 5, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-12 08:45:00',
-                'updated_at' => '2024-09-12 08:45:00'
+                'positions_id' => 3,
+                'department' => 'Colorectal Surgery',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 41,
-                'first_name' => 'Evelyn',
-                'last_name' => 'King',
-                'email' => 'evelyn.king@example.com',
+                'first_name' => 'Aiden',
+                'last_name' => 'Walker',
+                'email' => 'aiden.walker@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 17,
-                'department' => 'Pulmonary Medicine',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-13 08:30:00',
-                'updated_at' => '2024-09-13 08:30:00'
+                'positions_id' => 1,
+                'department' => 'Dermatology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 42,
-                'first_name' => 'James',
-                'last_name' => 'Wright',
-                'email' => 'james.wright@example.com',
+                'first_name' => 'Elijah',
+                'last_name' => 'Taylor',
+                'email' => 'elijah.taylor@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 25,
-                'department' => 'Neurosurgery',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-13 09:15:00',
-                'updated_at' => '2024-09-13 09:15:00'
+                'positions_id' => 2,
+                'department' => 'Endocrinology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 43,
-                'first_name' => 'Charlotte',
-                'last_name' => 'Hill',
-                'email' => 'charlotte.hill@example.com',
+                'first_name' => 'William',
+                'last_name' => 'Harris',
+                'email' => 'william.harris@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 26,
-                'department' => 'Maternity',
-                'status_id' => 2, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-14 07:45:00',
-                'updated_at' => '2024-09-14 07:45:00'
+                'positions_id' => 3,
+                'department' => 'Gastroenterology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 44,
-                'first_name' => 'Alexander',
-                'last_name' => 'Green',
-                'email' => 'alexander.green@example.com',
+                'first_name' => 'Liam',
+                'last_name' => 'Nelson',
+                'email' => 'liam.nelson@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 21,
-                'department' => 'Ophthalmology',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-15 08:50:00',
-                'updated_at' => '2024-09-15 08:50:00'
+                'positions_id' => 1,
+                'department' => 'Nephrology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 45,
-                'first_name' => 'Harper',
-                'last_name' => 'Baker',
-                'email' => 'harper.baker@example.com',
+                'first_name' => 'Noah',
+                'last_name' => 'Garcia',
+                'email' => 'noah.garcia@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 27,
-                'department' => 'Gastroenterology',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-15 09:30:00',
-                'updated_at' => '2024-09-15 09:30:00'
+                'positions_id' => 2,
+                'department' => 'Neurology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 46,
-                'first_name' => 'William',
-                'last_name' => 'Adams',
-                'email' => 'william.adams@example.com',
+                'first_name' => 'Ethan',
+                'last_name' => 'Miller',
+                'email' => 'ethan.miller@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 2,
-                'department' => 'Pediatrics',
-                'status_id' => 2, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-16 10:20:00',
-                'updated_at' => '2024-09-16 10:20:00'
+                'positions_id' => 3,
+                'department' => 'Oncology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 47,
-                'first_name' => 'Amelia',
-                'last_name' => 'Perez',
-                'email' => 'amelia.perez@example.com',
+                'first_name' => 'Lucas',
+                'last_name' => 'Davis',
+                'email' => 'lucas.davis@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 6,
-                'department' => 'Pharmacy',
-                'status_id' => 4, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-16 11:05:00',
-                'updated_at' => '2024-09-16 11:05:00'
+                'positions_id' => 1,
+                'department' => 'Orthopedics',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 48,
-                'first_name' => 'Matthew',
-                'last_name' => 'Carter',
-                'email' => 'matthew.carter@example.com',
+                'first_name' => 'Mason',
+                'last_name' => 'Rodriguez',
+                'email' => 'mason.rodriguez@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 28,
-                'department' => 'Dentistry',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-17 08:00:00',
-                'updated_at' => '2024-09-17 08:00:00'
+                'positions_id' => 2,
+                'department' => 'Ophthalmology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(2),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 49,
-                'first_name' => 'Ella',
-                'last_name' => 'Mitchell',
-                'email' => 'ella.mitchell@example.com',
+                'first_name' => 'Oliver',
+                'last_name' => 'Lee',
+                'email' => 'oliver.lee@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 29,
-                'department' => 'Medical Records',
-                'status_id' => 1, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-17 09:45:00',
-                'updated_at' => '2024-09-17 09:45:00'
+                'positions_id' => 3,
+                'department' => 'Otolaryngology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(3),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ],
             [
                 'id' => 50,
-                'first_name' => 'Logan',
-                'last_name' => 'Roberts',
-                'email' => 'logan.roberts@example.com',
+                'first_name' => 'Benjamin',
+                'last_name' => 'Hernandez',
+                'email' => 'benjamin.hernandez@example.com',
                 'fingerprint_data' => NULL,
-                'positions_id' => 12,
-                'department' => 'Psychiatry',
-                'status_id' => 3, // Updated to match status_id table id
-                'shift_id' => 2, // Updated shift assignment id
-                'created_at' => '2024-09-18 10:30:00',
-                'updated_at' => '2024-09-18 10:30:00'
+                'positions_id' => 1,
+                'department' => 'Pathology',
+                'status_id' => 1,
+                'shift_id' => $this->getShiftId(1),
+                'created_at' => '2024-08-27 09:44:00',
+                'updated_at' => '2024-08-27 09:44:00'
             ]
         ];
+            
+       
 
         DB::table('employees')->insert($employees);
+    }
+
+    private function getShiftId($positionId)
+    {
+        // Define the mapping of position IDs to shift IDs
+        $positionShiftMap = [
+            1 => 3, // Doctor 24-Hour Shift
+            2 => 1, // Nurse 24-Hour Shift Group A
+            3 => 4, // Surgeon 16-Hour Shift
+            4 => 2, // Nurse 24-Hour Shift Group B
+            5 => 5            
+        ];
+
+        // Return the shift ID based on the position ID
+        return $positionShiftMap[$positionId] ?? 1; // Default to shift ID 1 if not found
     }
 }
