@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class employee extends Model
 {
     protected $table = 'employees';
@@ -24,6 +25,8 @@ class employee extends Model
 
     public function shift(){
         return $this->belongsTo(shift::class);
-
+    }
+    public function position(){
+        return $this->belongsto(position::class);
     }
 }

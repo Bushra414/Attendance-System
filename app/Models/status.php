@@ -13,4 +13,7 @@ class status extends Model
     protected $fillable = ['name']; // Allow mass assignment for the 'name' attribute
 
     // Optionally, you can define relationships or other model methods here
+    public function employees(){
+        return $this->hasMany(employee::class);
+    }
 }
