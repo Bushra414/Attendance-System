@@ -1,26 +1,36 @@
 @extends('layout.table')
 
 @section('title')
-Attendance Log  
+    Attendance Log
 @endsection
 
 @section('header')
-Attendance Log  
+    Attendance Log
 @endsection
 
 @section('content')
-<table id="example" class="table table-striped" style="width:100%">
-    <thead>
-        <tr>
-            <th>Full Name</th>
-            <th>Position</th>
-            <th>Check-in Time</th>
-            <th>Check-out Time</th>
-            <th>Date</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
+    <table id="example" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>clock-in Time</th>
+                <th>clock-out Time</th>
 
-    </tbody>
-@endsection
+                <th>Date</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($records as $record)
+                <tr>
+                    <td>{{ $employees->where('id', $record->employee_id)->pluck('first_name')->first() . ' ' . $employees->where('id', $record->employee_id)->pluck('last_name')->first() }}</td>
+                    <td>{{ $record->clock_in }}</td>
+                    <td>{{ $record->clock_out }}</td>
+                    <td class="date">{{ $record->date }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    @endsection
+    <script>
+        
+    </script>

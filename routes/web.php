@@ -4,12 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\employeeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\shiftController;
+use App\Http\Controllers\attendanceController;
 
 
 
-Route::get('/attendance', function () {
-    return view('sections.attendance');
-})->middleware('userAuth');
+
 
 Route::get('/overtime', function () {
     return view('sections.overtime');
@@ -47,4 +46,5 @@ Route::get ('/shift', [shiftController::class, 'index'])->name('index')->middlew
 
 Route::get ('/schedule', [shiftController::class, 'ScheduleIndex'])->name('index')->middleware('userAuth');
 
+Route::get ('/attendance' , [attendanceController::class, 'index'])->name('attendance')->middleware('userAuth');
 

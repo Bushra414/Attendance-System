@@ -1,17 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-use app\Modals\employee;
-use app\Modals\Position;
-use app\Modals\shift;
 
+use App\Models\attendanceRecord;
+use App\Models\employee;
 
 use Illuminate\Http\Request;
 
 class attendanceController extends Controller
 {
     public function index(){
-        employee::all();
-        
+        $records = attendanceRecord::all();
+        $employees = employee::all();
+        return view('sections.attendance', compact('records' , 'employees'));
     }    
 }
